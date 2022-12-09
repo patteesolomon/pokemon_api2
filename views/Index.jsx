@@ -7,25 +7,24 @@ const myStyle = {
 };
 
 class Index extends React.Component {
-    render () {
-        const {pokemon} = this.props;
-    return (
-        <div>
-            <h1 style={myStyle}>Pokedex</h1>
-        <ul>
-        {pokemon.map((pokemons, i) => {
-            return (
-                <li>
-                    <a href={`/pokemon/${pokemons.id} `}> {pokemons.name.charAt(0).toUpperCase() + pokemons.name.slice(1)}
-                        </a>
-                            {/* - Color: {pokemons.color.charAt(0).toUpperCase() + pokemons.color.slice(1)}
-                        / Type: {pokemons.type.charAt(0).toUpperCase() + pokemons.type.slice(1)} */}
-                </li>
-            );
-        })}
-    </ul>
-    </div>
-    )}
+    render() {
+        console.log(this.props);
+        return (
+        <div> 
+            <h1 style={myStyle}> See All The Pokemon! </h1>
+            <ul>
+            {this.props.pokemons.map((poke, i) => {
+                return (
+                    <li><a href={`/pokemon/${poke.id}`}>{poke.name.substring(0,1).toUpperCase() + poke.name.substring(1)}</a></li>
+                )
+            })}    
+            </ul>
+            <nav>
+                <a href="/pokemon/new">Add a new pokemon</a>
+            </nav>
+        </div>     
+         );
+    }
 }
 
 module.exports = Index;

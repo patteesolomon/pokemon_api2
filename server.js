@@ -74,9 +74,9 @@ app.listen(port, () => {
   console.log("listening");
 });
 
-db.on("error", (err) => console.log(err.message + " is mongod not running?"));
-db.on("open", () => console.log("mongo connected: ", mongoURI));
-db.on("close", () => console.log("mongo disconnected"));
+// db.on("error", (err) => console.log(err.message + " is mongod not running?"));
+// db.on("open", () => console.log("mongo connected: ", mongoURI));
+// db.on("close", () => console.log("mongo disconnected"));
 
 // pokemon.create(pnew)
 // // if database transaction succeeds
@@ -92,30 +92,30 @@ db.on("close", () => console.log("mongo disconnected"));
 //     db.close();
 // });
 
-pokemon.insertMany(pokemon )
-// if database transaction succeeds
-.then((pokemon ) => {
-  console.log(pokemon );
-})
-// if database transaction fails
-.catch((error) => {
-  console.log(error);
-})
-// close db connection either way
-.finally(() => {
-  db.close();
-});
+// pokemon.insertMany(pokemon )
+// // if database transaction succeeds
+// .then((pokemon ) => {
+//   console.log(pokemon );
+// })
+// // if database transaction fails
+// .catch((error) => {
+//   console.log(error);
+// })
+// // close db connection either way
+// .finally(() => {
+//   db.close();
+// });
 
-pokemon.find({})
-// if database transaction succeeds
-.then((pokemons) => {
-  console.log(pokemons);
-})
-// if database transaction fails
-.catch((error) => {
-  console.log(error);
-})
-// close db connection either way
-.finally(() => {
-  db.close();
-});
+// pokemon.find({})
+// // if database transaction succeeds
+// .then((pokemons) => {
+//   console.log(pokemons);
+// })
+// // if database transaction fails
+// .catch((error) => {
+//   console.log(error);
+// })
+// // close db connection either way
+// .finally(() => {
+//   db.close();
+// });
