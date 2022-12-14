@@ -1,29 +1,6 @@
 {
-  "name": "mongostuff",
-  "version": "1.0.0",
-  "description": "* Clone this repository\r * Type \"npm i\" to install dependances\r * Type \"nodemon\" to start the server\r   * you can install nodemon globally with \"npm i -g nodemon\" or locally as a dev dependency with \"npm i nodemon --save-dev\"",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "express-react-views": "^0.11.0",
-    "mongoose": "^6.8.0",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KasperKain/PerScholas-Fruits.git"
-  },
-  "bugs": {
-    "url": "https://github.com/KasperKain/PerScholas-Fruits/issues"
-  },
-  "homepage": "https://github.com/KasperKain/PerScholas-Fruits#readme"
+    "package.json": "^0.0.0"
+    
+  }
 }

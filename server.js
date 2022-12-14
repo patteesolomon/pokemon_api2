@@ -6,8 +6,6 @@ const port = 3000;
 const mongoose = require("mongoose");
 const pokemon = require('./models/pokemon.js');
 
-// Set up middleware
-// Global configuration
 const mongoURI = process.env.MONGO_URI;
 const db = mongoose.connection;
 
@@ -29,17 +27,6 @@ mongoose.connection.once("open", () => {
   console.log("connected to mongo");
 });
 
-// index 
-// new 
-// destroy 
-// update 
-// create 
-// edit 
-// show 
-
-// Connection Error/Success
-// Define callback functions for various events
-
 app.get('/', (req, res) => {
   res.send('Welcome to the Pokemon App!');
 });
@@ -60,16 +47,32 @@ app.get('/pokemon/:id', (req, res) => {
   pokemon.findById(req.params.id, (err, foundPokemon) => {
     res.render('Show', {
       pokemons : foundPokemon
-      //id: [req.params.id]
     });
   });
 });
 
-app.post('/pokemon/', (req, res) =>{
+app.get('/pokemon/:id/edit', (req, res) => {
+  pokemon.findById(req.params.id, (err, foundPokemon)=>{
+    if(!err){
+      res.render(
+        'Edit',
+        {
+          pokemon: foundPokemon
+        }
+      );
+    }
+    else{
+      res.send({ msg: err.message });
+    }
+  });
+});
+
+app.post('/pokemon', (req, res) =>{
     pokemon.create(req.body, (error, createdPokemon) => {
       res.redirect('/pokemon');
     });
   });
+
 app.listen(port, () => {
   console.log("listening");
 });

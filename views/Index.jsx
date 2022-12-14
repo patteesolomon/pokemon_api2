@@ -16,7 +16,12 @@ class Index extends React.Component {
                 return (
                     <li><a href={`/pokemon/${poke.id}`}>{poke.name.substring(0,1).toUpperCase() + poke.name.substring(1) +
                     `${poke.color}` +
-                    `${poke.type}`}</a></li>
+                    `${poke.type}`}</a>
+                    <a href={`/pokemon/${pokemon.id}/edit`}>Edit</a>
+                            <form action={`/pokemon/${pokemon.id}?_method=DELETE`} method="POST">
+                            <input type="submit" value="DELETE"/>
+                        </form>
+                    </li>
                 )
             })}    
             </ul>

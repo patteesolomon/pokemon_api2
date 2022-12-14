@@ -2,6 +2,7 @@ const React = require('react');
 
 class Show extends React.Component {
     render() {
+        <DefaultLayout title = {"Edit Page"}>
         const {pokemons} = this.props;
         return(
             <div>
@@ -12,6 +13,7 @@ class Show extends React.Component {
             </div>
         );
     }
+    </DefaultLayout>
 }
 
 module.exports = Show;
